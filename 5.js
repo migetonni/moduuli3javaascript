@@ -92,4 +92,13 @@ const picArray = [
   },
 ];
 
-// add your code here
+picArray.forEach(populateSection)
+
+function populateSection(item){
+  const section = document.getElementById('pictures')
+  const article = `<article class="card"> <h2>${item.title}</h2> <figure>
+      <img src=${item.image.medium} alt=${item.title}>
+      <figcaption>${item.caption}</figcaption>
+   </figure> <p>${item.description}</p>  </article>`
+  section.innerHTML += article
+}
